@@ -1,6 +1,6 @@
 # Student Marks Prediction Using Machine Learning
 
-An AICTE AI Internship (Foundation Track, Beginner Mini Project level) submission-ready project demonstrating supervised machine learning concepts using Linear Regression.
+A professional, complete implementation demonstrating supervised machine learning concepts using Linear Regression.
 
 ---
 
@@ -55,9 +55,9 @@ student_marks_prediction/
 ├── src/
 │   ├── generate_dataset.py      # Script to create data/student_scores.csv
 │   ├── marks_prediction.py      # ML pipeline training, evaluation, and inference
-│   └── dashboard.py             # AMOLED Streamlit web dashboard script
+│   └── dashboard.py             # Slate-Indigo Streamlit web dashboard script
 ├── run_project.sh               # One-click execution shell script
-└── README.md                    # Project documentation and submission report
+└── README.md                    # Project documentation and analysis report
 ```
 
 ---
