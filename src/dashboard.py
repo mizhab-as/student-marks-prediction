@@ -37,8 +37,8 @@ custom_css = """
 .stApp {
     background-color: #000000 !important;
     background-image: 
-        radial-gradient(circle at 85% 15%, rgba(139, 92, 246, 0.08) 0%, transparent 40%),
-        radial-gradient(circle at 15% 85%, rgba(0, 243, 255, 0.06) 0%, transparent 45%) !important;
+        radial-gradient(circle at 80% 15%, rgba(139, 92, 246, 0.09) 0%, transparent 45%),
+        radial-gradient(circle at 20% 80%, rgba(0, 243, 255, 0.07) 0%, transparent 45%) !important;
     color: #ffffff !important;
     font-family: 'Plus Jakarta Sans', sans-serif !important;
 }
@@ -80,22 +80,22 @@ header {visibility: hidden;}
     display: block;
     width: 35px;
     height: 35px;
-    background-color: rgba(0, 243, 255, 0.07);
+    background-color: rgba(0, 243, 255, 0.05);
     bottom: -150px;
-    animation: floatUp 28s infinite linear;
+    animation: floatUp 32s infinite linear;
     border-radius: 50%;
-    box-shadow: 0 0 15px rgba(0, 243, 255, 0.12);
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.1);
 }
 
-.bg-bubbles li:nth-child(1) { left: 8%; width: 75px; height: 75px; animation-delay: 0s; animation-duration: 20s; background-color: rgba(255, 0, 127, 0.05); box-shadow: 0 0 25px rgba(255, 0, 127, 0.1); }
+.bg-bubbles li:nth-child(1) { left: 8%; width: 75px; height: 75px; animation-delay: 0s; animation-duration: 20s; background-color: rgba(255, 0, 127, 0.04); box-shadow: 0 0 25px rgba(255, 0, 127, 0.08); }
 .bg-bubbles li:nth-child(2) { left: 18%; width: 30px; height: 30px; animation-delay: 3s; animation-duration: 23s; }
 .bg-bubbles li:nth-child(3) { left: 28%; width: 45px; height: 45px; animation-delay: 6s; animation-duration: 17s; }
-.bg-bubbles li:nth-child(4) { left: 45%; width: 60px; height: 60px; animation-delay: 1s; animation-duration: 27s; background-color: rgba(255, 0, 127, 0.05); box-shadow: 0 0 25px rgba(255, 0, 127, 0.1); }
+.bg-bubbles li:nth-child(4) { left: 45%; width: 60px; height: 60px; animation-delay: 1s; animation-duration: 27s; background-color: rgba(255, 0, 127, 0.04); box-shadow: 0 0 25px rgba(255, 0, 127, 0.08); }
 .bg-bubbles li:nth-child(5) { left: 58%; width: 38px; height: 38px; animation-delay: 4s; animation-duration: 20s; }
 .bg-bubbles li:nth-child(6) { left: 72%; width: 100px; height: 100px; animation-delay: 8s; animation-duration: 32s; }
-.bg-bubbles li:nth-child(7) { left: 85%; width: 50px; height: 50px; animation-delay: 2s; animation-duration: 25s; background-color: rgba(0, 243, 255, 0.05); }
+.bg-bubbles li:nth-child(7) { left: 85%; width: 50px; height: 50px; animation-delay: 2s; animation-duration: 25s; background-color: rgba(0, 243, 255, 0.04); }
 .bg-bubbles li:nth-child(8) { left: 93%; width: 25px; height: 25px; animation-delay: 11s; animation-duration: 19s; }
-.bg-bubbles li:nth-child(9) { left: 38%; width: 85px; height: 85px; animation-delay: 14s; animation-duration: 30s; background-color: rgba(255, 0, 127, 0.05); box-shadow: 0 0 25px rgba(255, 0, 127, 0.1); }
+.bg-bubbles li:nth-child(9) { left: 38%; width: 85px; height: 85px; animation-delay: 14s; animation-duration: 30s; background-color: rgba(255, 0, 127, 0.04); box-shadow: 0 0 25px rgba(255, 0, 127, 0.08); }
 .bg-bubbles li:nth-child(10) { left: 65%; width: 55px; height: 55px; animation-delay: 5s; animation-duration: 21s; }
 
 /* Custom styled tabs for dark aesthetic */
@@ -103,12 +103,13 @@ button[data-baseweb="tab"] {
     background-color: transparent !important;
     color: #666666 !important;
     border: none !important;
-    font-size: 15px !important;
-    font-weight: 500 !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
     font-family: 'Space Grotesk', sans-serif !important;
-    padding: 12px 24px !important;
+    padding: 12px 28px !important;
     transition: all 0.25s ease !important;
     border-bottom: 2px solid transparent !important;
+    margin-right: 8px !important;
 }
 
 button[data-baseweb="tab"]:hover {
@@ -118,39 +119,61 @@ button[data-baseweb="tab"]:hover {
 button[data-baseweb="tab"][aria-selected="true"] {
     color: #00f3ff !important;
     border-bottom: 2px solid #00f3ff !important;
-    text-shadow: 0 0 10px rgba(0, 243, 255, 0.3) !important;
+    text-shadow: 0 0 12px rgba(0, 243, 255, 0.4) !important;
 }
 
-/* Custom styled transparent glowing cards */
+/* Custom styled transparent glass cards */
 .neon-card {
-    background-color: rgba(10, 10, 12, 0.7) !important;
+    background-color: rgba(12, 12, 16, 0.6) !important;
     border: 1px solid rgba(255, 255, 255, 0.06) !important;
     border-radius: 16px !important;
     padding: 24px !important;
-    margin-bottom: 22px !important;
-    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.8) !important;
+    margin-bottom: 24px !important;
+    box-shadow: 0 16px 48px 0 rgba(0, 0, 0, 0.8) !important;
     backdrop-filter: blur(12px) !important;
     -webkit-backdrop-filter: blur(12px) !important;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
 }
 
 .neon-card:hover {
-    border-color: rgba(0, 243, 255, 0.4) !important;
-    box-shadow: 0 0 25px rgba(0, 243, 255, 0.15) !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+    box-shadow: 0 16px 48px 0 rgba(0, 0, 0, 0.95) !important;
     transform: translateY(-4px);
 }
 
-.neon-card-pink:hover {
+/* Specific Top Border Accent Lines for Metrics */
+.card-r2 { border-top: 4px solid #00f3ff !important; }
+.card-mae { border-top: 4px solid #ff007f !important; }
+.card-mse { border-top: 4px solid #8b5cf6 !important; }
+.card-rmse { border-top: 4px solid #39ff14 !important; }
+
+.card-r2:hover {
+    border-color: rgba(0, 243, 255, 0.4) !important;
+    box-shadow: 0 0 25px rgba(0, 243, 255, 0.12) !important;
+}
+.card-mae:hover {
     border-color: rgba(255, 0, 127, 0.4) !important;
-    box-shadow: 0 0 25px rgba(255, 0, 127, 0.15) !important;
+    box-shadow: 0 0 25px rgba(255, 0, 127, 0.12) !important;
 }
-
-.neon-card-purple:hover {
+.card-mse:hover {
     border-color: rgba(139, 92, 246, 0.4) !important;
-    box-shadow: 0 0 25px rgba(139, 92, 246, 0.15) !important;
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.12) !important;
+}
+.card-rmse:hover {
+    border-color: rgba(57, 255, 20, 0.4) !important;
+    box-shadow: 0 0 25px rgba(57, 255, 20, 0.12) !important;
 }
 
-/* Neon text color configurations */
+/* Gradient Hero Title */
+.glow-title-gradient {
+    background: linear-gradient(135deg, #00f3ff 20%, #ff007f 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    text-shadow: 0 0 30px rgba(0, 243, 255, 0.05);
+}
+
+/* Neon text configurations */
 .neon-blue {
     color: #00f3ff;
     text-shadow: 0 0 10px rgba(0, 243, 255, 0.4);
@@ -178,35 +201,17 @@ button[data-baseweb="tab"][aria-selected="true"] {
 /* Custom styled numeric and slider handles */
 div[role="slider"] {
     background-color: #00f3ff !important;
-    box-shadow: 0 0 8px rgba(0, 243, 255, 0.8) !important;
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.8) !important;
 }
 
 div[data-baseweb="slider"] div {
-    background-color: rgba(255, 255, 255, 0.1) !important;
+    background-color: rgba(255, 255, 255, 0.08) !important;
 }
 
 /* Layout spacing */
 .block-container {
-    padding-top: 2rem !important;
+    padding-top: 1.5rem !important;
     padding-bottom: 2rem !important;
-}
-
-/* Streamlit Dataframe custom styles */
-div[data-testid="stTable"] table {
-    background-color: #050505 !important;
-    color: #ffffff !important;
-    border-collapse: collapse !important;
-    border-radius: 8px !important;
-    overflow: hidden !important;
-}
-div[data-testid="stTable"] th {
-    background-color: #0a0a0c !important;
-    color: #00f3ff !important;
-    font-family: 'Space Grotesk', sans-serif !important;
-    border-bottom: 1px solid #1c1c1e !important;
-}
-div[data-testid="stTable"] td {
-    border-bottom: 1px solid #101012 !important;
 }
 </style>
 
@@ -264,16 +269,40 @@ rmse = np.sqrt(mse)
 slope = model.coef_[0]
 intercept = model.intercept_
 
-# 4. App Landing Header
+# Custom Helper: Premium Glassmorphic Table Generator
+def render_styled_table(data, header_accent_color="#00f3ff"):
+    html = "<div style='overflow-x:auto; margin-bottom:15px;'>"
+    html += "<table style='width:100%; border-collapse:collapse; background-color:rgba(12, 12, 16, 0.4); border-radius:12px; border: 1px solid rgba(255,255,255,0.05); overflow:hidden;'>"
+    # Header Row
+    html += "<thead><tr style='background-color:rgba(255, 255, 255, 0.02); border-bottom:1px solid rgba(255, 255, 255, 0.08);'>"
+    for col in data.columns:
+        html += f"<th style='padding:14px 18px; text-align:left; font-family:\"Space Grotesk\", sans-serif; font-size:12px; font-weight:600; color:{header_accent_color}; letter-spacing:1.5px; text-transform:uppercase;'>{col}</th>"
+    html += "</tr></thead><tbody>"
+    # Content Rows
+    for idx, row in data.iterrows():
+        bg_style = "background-color:rgba(255, 255, 255, 0.015);" if idx % 2 == 0 else ""
+        html += f"<tr style='border-bottom:1px solid rgba(255, 255, 255, 0.03); {bg_style}'>"
+        for val in row:
+            if isinstance(val, float):
+                # Check formatting values
+                val_str = f"{val:.2f}"
+            else:
+                val_str = str(val)
+            html += f"<td style='padding:14px 18px; font-size:14px; font-family:inherit; color:#e5e5e7;'>{val_str}</td>"
+        html += "</tr>"
+    html += "</tbody></table></div>"
+    return html
+
+# 4. App Landing Header with Gradient Title
 st.markdown("""
-<div style="text-align: center; margin-top: 1rem; margin-bottom: 2.5rem;">
-    <span style="font-size: 11px; font-weight: 700; letter-spacing: 3px; color: #ff007f; text-transform: uppercase;">
-        AICTE Internship Project submission
+<div style="text-align: center; margin-top: 0.5rem; margin-bottom: 2rem;">
+    <span style="font-size: 11px; font-weight: 700; letter-spacing: 4px; color: #ff007f; text-transform: uppercase; text-shadow: 0 0 10px rgba(255, 0, 127, 0.2);">
+        AICTE Internship Project Submission
     </span>
-    <h1 style="margin: 0.5rem 0; font-size: 44px; font-weight: 700; color: #ffffff; text-shadow: 0 0 15px rgba(255, 255, 255, 0.1);">
+    <h1 class="glow-title-gradient" style="margin: 0.4rem 0 0.8rem 0; font-size: 46px; font-weight: 700; line-height: 1.2;">
         Student Marks Prediction Studio
     </h1>
-    <p style="font-size: 15px; color: #888888; max-width: 600px; margin: 0 auto;">
+    <p style="font-size: 15px; color: #888888; max-width: 600px; margin: 0 auto; line-height: 1.5;">
         An interactive AMOLED platform demonstrating supervised machine learning. 
         Train, evaluate, and predict scores live using the <b>Linear Regression</b> model.
     </p>
@@ -313,8 +342,8 @@ with tab1:
         
         # Visual breakdown card
         st.markdown(f"""
-        <div class="neon-card neon-card-purple">
-            <h4 style="margin: 0 0 12px 0; font-size: 16px; color: #ffffff;">How the Prediction Works</h4>
+        <div class="neon-card card-mse">
+            <h4 style="margin: 0 0 12px 0; font-size: 16px; color: #ffffff; font-family:'Space Grotesk', sans-serif;">How the Prediction Works</h4>
             <p style="margin: 0; color: #a5a5a5; font-size: 13px; line-height: 1.6;">
                 Using the learned intercept (<span class="neon-pink">{intercept:.2f}</span>) as the baseline, 
                 every hour of study adds a rate of <span class="neon-blue">{slope:.2f}%</span> to the score.
@@ -329,7 +358,7 @@ with tab1:
     with col2:
         # Prediction Display Panel
         st.markdown(f"""
-        <div class="neon-card" style="text-align: center; padding: 45px 30px !important;">
+        <div class="neon-card" style="text-align: center; padding: 45px 30px !important; border-top: 4px solid #39ff14 !important;">
             <h4 style="margin: 0; color: #888888; font-weight: 500; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase;">
                 ESTIMATED SCORE
             </h4>
@@ -344,7 +373,7 @@ with tab1:
         
         # Formula Panel
         st.markdown(f"""
-        <div class="neon-card neon-card-pink" style="text-align: center; padding: 18px !important;">
+        <div class="neon-card card-mae" style="text-align: center; padding: 18px !important;">
             <h5 style="margin: 0 0 6px 0; color: #888888; font-size: 11px; letter-spacing: 1px; text-transform: uppercase;">
                 Model Equation
             </h5>
@@ -367,8 +396,9 @@ with tab2:
         </p>
         """, unsafe_allow_html=True)
         
-        # Display dataset preview
-        st.table(df.head(10))
+        # Display dataset preview (custom styled table)
+        table_html = render_styled_table(df.head(10), header_accent_color="#00f3ff")
+        st.markdown(table_html, unsafe_allow_html=True)
         st.markdown("<p style='font-size: 12px; color: #555555; text-align: center;'>Showing first 10 of 25 student records.</p>", unsafe_allow_html=True)
         
     with col2:
@@ -380,13 +410,14 @@ with tab2:
         fig.patch.set_facecolor('#000000')
         ax.set_facecolor('#000000')
         
-        # Scatter plot
-        ax.scatter(df['Hours'], df['Scores'], color='#00f3ff', alpha=0.8, edgecolors='#ffffff', linewidths=0.5, s=90, label='Student Data Points')
+        # Scatter plot with cyan glow points
+        ax.scatter(df['Hours'], df['Scores'], color='#00f3ff', alpha=0.3, s=250, edgecolors='none') # Outer soft glow
+        ax.scatter(df['Hours'], df['Scores'], color='#00f3ff', alpha=0.8, edgecolors='#ffffff', linewidths=0.7, s=90, label='Student Data Points')
         
         # Visual limits & grids
         ax.set_xlim(0, 11)
         ax.set_ylim(0, 105)
-        ax.grid(color='#181818', linestyle='--', linewidth=0.7)
+        ax.grid(color='#1c1c1e', linestyle='--', linewidth=0.7)
         
         # Styles
         ax.set_xlabel('Study Hours', color='#888888', fontsize=11, labelpad=8)
@@ -411,34 +442,34 @@ with tab3:
     k_col1, k_col2, k_col3, k_col4 = st.columns(4)
     with k_col1:
         st.markdown(f"""
-        <div class="neon-card" style="text-align: center; padding: 15px !important;">
-            <div style="font-size: 11px; color: #888888; font-weight: 500; letter-spacing: 1px;">R² SCORE</div>
-            <div class="neon-blue" style="font-size: 26px; font-weight: 800; margin-top: 5px;">{r2:.4f}</div>
-            <div style="font-size: 11px; color: #555555; margin-top: 5px;">91.8% variance explained</div>
+        <div class="neon-card card-r2" style="text-align: center; padding: 20px 15px !important;">
+            <div style="font-size: 11px; color: #888888; font-weight: 600; letter-spacing: 1.5px;">R² SCORE</div>
+            <div class="neon-blue" style="font-size: 28px; font-weight: 800; margin-top: 8px;">{r2:.4f}</div>
+            <div style="font-size: 11px; color: #666666; margin-top: 5px;">91.8% variance explained</div>
         </div>
         """, unsafe_allow_html=True)
     with k_col2:
         st.markdown(f"""
-        <div class="neon-card neon-card-pink" style="text-align: center; padding: 15px !important;">
-            <div style="font-size: 11px; color: #888888; font-weight: 500; letter-spacing: 1px;">MAE</div>
-            <div class="neon-pink" style="font-size: 26px; font-weight: 800; margin-top: 5px;">{mae:.4f}</div>
-            <div style="font-size: 11px; color: #555555; margin-top: 5px;">Mean Absolute Error</div>
+        <div class="neon-card card-mae" style="text-align: center; padding: 20px 15px !important;">
+            <div style="font-size: 11px; color: #888888; font-weight: 600; letter-spacing: 1.5px;">MAE</div>
+            <div class="neon-pink" style="font-size: 28px; font-weight: 800; margin-top: 8px;">{mae:.4f}</div>
+            <div style="font-size: 11px; color: #666666; margin-top: 5px;">Mean Absolute Error</div>
         </div>
         """, unsafe_allow_html=True)
     with k_col3:
         st.markdown(f"""
-        <div class="neon-card" style="text-align: center; padding: 15px !important;">
-            <div style="font-size: 11px; color: #888888; font-weight: 500; letter-spacing: 1px;">MSE</div>
-            <div class="neon-purple" style="font-size: 26px; font-weight: 800; margin-top: 5px;">{mse:.4f}</div>
-            <div style="font-size: 11px; color: #555555; margin-top: 5px;">Mean Squared Error</div>
+        <div class="neon-card card-mse" style="text-align: center; padding: 20px 15px !important;">
+            <div style="font-size: 11px; color: #888888; font-weight: 600; letter-spacing: 1.5px;">MSE</div>
+            <div class="neon-purple" style="font-size: 28px; font-weight: 800; margin-top: 8px;">{mse:.4f}</div>
+            <div style="font-size: 11px; color: #666666; margin-top: 5px;">Mean Squared Error</div>
         </div>
         """, unsafe_allow_html=True)
     with k_col4:
         st.markdown(f"""
-        <div class="neon-card neon-card-purple" style="text-align: center; padding: 15px !important;">
-            <div style="font-size: 11px; color: #888888; font-weight: 500; letter-spacing: 1px;">RMSE</div>
-            <div class="neon-green" style="font-size: 26px; font-weight: 800; margin-top: 5px;">{rmse:.4f}</div>
-            <div style="font-size: 11px; color: #555555; margin-top: 5px;">Root Mean Squared Error</div>
+        <div class="neon-card card-rmse" style="text-align: center; padding: 20px 15px !important;">
+            <div style="font-size: 11px; color: #888888; font-weight: 600; letter-spacing: 1.5px;">RMSE</div>
+            <div class="neon-green" style="font-size: 28px; font-weight: 800; margin-top: 8px;">{rmse:.4f}</div>
+            <div style="font-size: 11px; color: #666666; margin-top: 5px;">Root Mean Squared Error</div>
         </div>
         """, unsafe_allow_html=True)
         
@@ -458,9 +489,10 @@ with tab3:
         ax.scatter(X_train, y_train, color='#00f3ff', alpha=0.5, edgecolors='#ffffff', linewidths=0.5, s=70, label='Training Data (80%)')
         ax.scatter(X_test, y_test, color='#39ff14', marker='s', alpha=0.9, edgecolors='#ffffff', linewidths=0.5, s=80, label='Testing Data (20%)')
         
-        # Plot regression line
+        # Plot regression line with double line neon glow effect
         x_line = np.linspace(1, 10, 100).reshape(-1, 1)
         y_line = model.predict(x_line)
+        ax.plot(x_line, y_line, color='#ff007f', linewidth=6, alpha=0.15) # Outer glow
         ax.plot(x_line, y_line, color='#ff007f', linewidth=2.5, label='Learned Fit Line')
         
         # Visual limits & grids
@@ -493,4 +525,6 @@ with tab3:
             'Predicted Marks': np.round(y_pred, 1)
         })
         
-        st.table(comparison_df)
+        # Render clean styled table
+        comparison_table_html = render_styled_table(comparison_df, header_accent_color="#ff007f")
+        st.markdown(comparison_table_html, unsafe_allow_html=True)
