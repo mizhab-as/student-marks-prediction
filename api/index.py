@@ -5,9 +5,6 @@ Serverless Flask backend for Vercel deployment.
 Loads precomputed model parameters, splits, and metrics from a JSON file,
 and uses standard python libraries (csv/json) to serve the endpoints.
 This removes all heavy production dependencies like pandas, numpy, and scikit-learn.
-
-Author: Antigravity
-Date: 2026-07-15
 """
 
 from flask import Flask, jsonify, request

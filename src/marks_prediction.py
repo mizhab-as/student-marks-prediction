@@ -1,16 +1,13 @@
 """
 marks_prediction.py
 -------------------
-This script builds a complete, beginner-friendly machine learning pipeline
+This script builds a complete machine learning pipeline
 to predict student marks based on their study hours. It demonstrates:
 - Data exploration & visualization
 - Training & testing split
 - Linear Regression model fitting
 - Model evaluation with standard regression metrics
 - Interactive predictions for user input
-
-Author: Antigravity
-Date: 2026-07-15
 """
 
 import os

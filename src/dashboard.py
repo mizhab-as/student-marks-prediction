@@ -4,9 +4,6 @@ dashboard.py
 A premium Espresso & Terracotta warm-dark dashboard for the Student Marks Prediction project.
 Features an artisanal warm color palette, floating copper-tan background particles,
 roasted coffee card layouts, and dynamic predictions using the trained Linear Regression model.
-
-Author: Antigravity
-Date: 2026-07-15
 """
 
 import os

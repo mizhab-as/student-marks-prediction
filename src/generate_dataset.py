@@ -2,11 +2,8 @@
 generate_dataset.py
 -------------------
 This script prepares the student scores dataset.
-If a real dataset is found in `archive/score_updated.csv`, it copies and prepares it.
+If a real dataset is found in the project path, it copies and prepares it.
 Otherwise, it generates a synthetic dataset as a fallback.
-
-Author: Antigravity
-Date: 2026-07-15
 """
 
 import os
