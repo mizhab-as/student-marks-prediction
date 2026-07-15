@@ -21,12 +21,14 @@ This project predicts a student's marks based on the number of study hours. By u
 - **NumPy**: For mathematical computations and noise simulation.
 - **Scikit-learn**: For splitting data (`train_test_split`), training the model (`LinearRegression`), and evaluating performance (`metrics`).
 - **Matplotlib**: For plotting the exploratory scatter plot and the final regression fit line.
+- **Streamlit**: For the interactive web application and premium dashboard.
 
 ---
 
 ## Key Features
 - **Dataset Generation**: Automatically generates a realistic synthetic dataset of 25 students with study hours between 1.0 and 10.0 hours.
 - **Supervised ML Demonstration**: Showcases the fundamental concepts of supervised learning (mapping features to labels).
+- **Interactive AMOLED Web Dashboard**: A pitch-black themed visual dashboard with an animated background for live user prediction and parameter tuning.
 - **Comprehensive Evaluation**: Computes R² score, Mean Absolute Error (MAE), Mean Squared Error (MSE), and Root Mean Squared Error (RMSE).
 - **Dual Prediction Modes**: Offers predictions for preset sample study hours (2.5, 5, 7.5, 9.25 hours) and accepts live custom study hours via user input.
 - **Robust Path Resolution**: Uses Python's `os.path` relative to `__file__` so that scripts run correctly from any directory.
@@ -52,7 +54,8 @@ student_marks_prediction/
 │   └── 2_regression_line.png    # Training/Testing fit line plot
 ├── src/
 │   ├── generate_dataset.py      # Script to create data/student_scores.csv
-│   └── marks_prediction.py      # ML pipeline training, evaluation, and inference
+│   ├── marks_prediction.py      # ML pipeline training, evaluation, and inference
+│   └── dashboard.py             # AMOLED Streamlit web dashboard script
 └── README.md                    # Project documentation and submission report
 ```
 
@@ -63,7 +66,7 @@ student_marks_prediction/
 ### 1. Install Dependencies
 Ensure you have Python 3 installed. Run the following command to install the required libraries:
 ```bash
-pip install pandas numpy matplotlib scikit-learn
+pip install pandas numpy matplotlib scikit-learn streamlit
 ```
 
 ### 2. Generate the Dataset
@@ -74,11 +77,18 @@ python src/generate_dataset.py
 This generates `data/student_scores.csv` containing study hours and score entries with Gaussian noise, and outputs a summary statistics overview.
 
 ### 3. Run the ML Pipeline & Predictions
-Execute the regression model training and evaluation script:
+Execute the regression model training and evaluation script in the terminal:
 ```bash
 python src/marks_prediction.py
 ```
 *Note: In an interactive terminal, the script will prompt you to enter a custom number of study hours to output a prediction live.*
+
+### 4. Run the AMOLED Web Dashboard
+To launch the interactive web dashboard with the animated background, run:
+```bash
+streamlit run src/dashboard.py
+```
+This will open the dashboard in a new tab in your web browser.
 
 ---
 
