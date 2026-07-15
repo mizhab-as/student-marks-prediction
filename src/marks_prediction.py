@@ -123,6 +123,25 @@ def run_pipeline():
     })
     print(comparison_df.to_string(index=False))
     
+    # Export parameters & splits to model_results.json
+    import json
+    model_results_path = os.path.join(data_dir, 'model_results.json')
+    results = {
+        'slope': float(slope),
+        'intercept': float(intercept),
+        'r2': float(r2),
+        'mae': float(mae),
+        'mse': float(mse),
+        'rmse': float(rmse),
+        'train_hours': X_train.flatten().tolist(),
+        'train_scores': y_train.tolist(),
+        'test_hours': X_test.flatten().tolist(),
+        'test_scores': y_test.tolist()
+    }
+    with open(model_results_path, 'w') as f:
+        json.dump(results, f, indent=4)
+    print(f"\nModel results successfully exported to JSON: {os.path.abspath(model_results_path)}")
+    
     print("\n" + "=" * 60)
     print("Step 6 - Visualization")
     print("=" * 60)
