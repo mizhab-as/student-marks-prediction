@@ -1,60 +1,55 @@
 """
 generate_dataset.py
 -------------------
-This script generates a synthetic dataset representing the relationship
-between the number of study hours and the corresponding student scores.
-It is designed as a beginner-friendly demonstration of synthetic data generation.
+This script prepares the student scores dataset.
+If a real dataset is found in `archive/score_updated.csv`, it copies and prepares it.
+Otherwise, it generates a synthetic dataset as a fallback.
 
 Author: Antigravity
 Date: 2026-07-15
 """
 
 import os
+import shutil
 import numpy as np
 import pandas as pd
 
 def generate_student_data():
-    # Set a fixed random seed for reproducibility
-    np.random.seed(42)
-    
-    # 1. Define dataset parameters
-    num_students = 25
-    base_score = 12.0  # Theoretical minimum score for 0 hours of study (intercept)
-    rate_per_hour = 8.8  # Increase in score per hour of study (slope)
-    noise_std = 5.0      # Standard deviation of the Gaussian noise representing external factors
-    
-    print("Generating synthetic student marks dataset...")
-    
-    # 2. Generate feature: Study Hours
-    # Uniformly distribute hours between 1.0 and 10.0, rounded to 1 decimal place
-    hours = np.round(np.random.uniform(1.0, 10.0, num_students), 1)
-    
-    # 3. Generate target: Scores with a linear relationship + Gaussian noise
-    noise = np.random.normal(loc=0.0, scale=noise_std, size=num_students)
-    scores = base_score + (hours * rate_per_hour) + noise
-    
-    # 4. Post-process scores: Clip to range [0, 100] and round to integers
-    scores = np.clip(np.round(scores), 0, 100).astype(int)
-    
-    # 5. Create a Pandas DataFrame
-    df = pd.DataFrame({
-        'Hours': hours,
-        'Scores': scores
-    })
-    
-    # 6. Define output file path using os.path relative to the script location
     script_dir = os.path.dirname(os.path.abspath(__file__))
+    archive_path = os.path.join(script_dir, '..', 'archive', 'score_updated.csv')
     data_dir = os.path.join(script_dir, '..', 'data')
-    
-    # Create the 'data' directory if it does not exist
-    os.makedirs(data_dir, exist_ok=True)
-    
     csv_file_path = os.path.join(data_dir, 'student_scores.csv')
     
-    # Save the dataframe to a CSV file
-    df.to_csv(csv_file_path, index=False)
+    os.makedirs(data_dir, exist_ok=True)
     
-    print(f"Dataset successfully created and saved to: {os.path.abspath(csv_file_path)}")
+    # Check if the user's real dataset is available in the archive
+    if os.path.exists(archive_path):
+        print(f"Loading real dataset from archive: {os.path.abspath(archive_path)}")
+        df = pd.read_csv(archive_path)
+        # Standardize columns if necessary
+        df.columns = [col.strip().capitalize() for col in df.columns]
+        df.to_csv(csv_file_path, index=False)
+        print(f"Real dataset copied and saved to: {os.path.abspath(csv_file_path)}")
+    else:
+        # Fallback to generating synthetic data
+        print("Real dataset archive not found. Generating synthetic dataset fallback...")
+        np.random.seed(42)
+        num_students = 25
+        base_score = 12.0
+        rate_per_hour = 8.8
+        noise_std = 5.0
+        
+        hours = np.round(np.random.uniform(1.0, 10.0, num_students), 1)
+        noise = np.random.normal(loc=0.0, scale=noise_std, size=num_students)
+        scores = np.clip(np.round(base_score + (hours * rate_per_hour) + noise), 0, 100).astype(int)
+        
+        df = pd.DataFrame({
+            'Hours': hours,
+            'Scores': scores
+        })
+        df.to_csv(csv_file_path, index=False)
+        print(f"Synthetic dataset fallback saved to: {os.path.abspath(csv_file_path)}")
+        
     print("\nDataset Preview (First 5 rows):")
     print(df.head())
     print("\nDataset Summary Statistics:")

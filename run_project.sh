@@ -21,9 +21,9 @@ pip3 install pandas numpy matplotlib scikit-learn streamlit
 echo "[✓] Dependencies verified."
 echo ""
 
-# 2. Dataset Generation
+# 2. Dataset Preparation
 echo "=============================================================="
-echo "[*] Step 2/3: Generating Synthetic Dataset..."
+echo "[*] Step 2/3: Preparing Student Scores Dataset..."
 echo "=============================================================="
 python3 src/generate_dataset.py
 echo ""
@@ -39,7 +39,7 @@ echo ""
 echo "=============================================================="
 echo "[?] Dashboard Launch Launch Options"
 echo "=============================================================="
-read -p "Would you like to start the AMOLED Streamlit web dashboard? (y/n): " launch_dashboard
+read -p "Would you like to start the Streamlit web dashboard? (y/n): " launch_dashboard
 echo ""
 
 if [[ "$launch_dashboard" =~ ^[Yy]$ ]]; then
