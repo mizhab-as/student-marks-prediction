@@ -56,12 +56,21 @@ student_marks_prediction/
 │   ├── generate_dataset.py      # Script to create data/student_scores.csv
 │   ├── marks_prediction.py      # ML pipeline training, evaluation, and inference
 │   └── dashboard.py             # AMOLED Streamlit web dashboard script
+├── run_project.sh               # One-click execution shell script
 └── README.md                    # Project documentation and submission report
 ```
 
 ---
 
 ## How to Run
+
+### Shortcut: Run Everything with One Command
+You can run the entire pipeline (dependency installation, dataset generation, ML prediction training, and optional dashboard launching) using the provided shell script:
+```bash
+./run_project.sh
+```
+
+### Manual Steps
 
 ### 1. Install Dependencies
 Ensure you have Python 3 installed. Run the following command to install the required libraries:
